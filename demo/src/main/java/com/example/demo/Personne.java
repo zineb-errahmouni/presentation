@@ -3,14 +3,12 @@ package com.example.demo;
 import java.time.LocalDate;
 import java.util.List;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.Singular;
+import lombok.*;
 
 @Getter
 @Setter
 @Builder
+@EqualsAndHashCode
 public class Personne {
 
     private String nom;

@@ -1,10 +1,7 @@
 package com.example.demo;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import org.junit.Assert;
@@ -36,7 +33,9 @@ public class Exercice1 {
         List<Personne> personnesExpected = Arrays.asList(personne2);
         List<Personne> resultat = null /* solution*/;
 
-        resultat = personneList.stream().filter(personne -> personne.getPrenom().startsWith("A")).collect(Collectors.toList());
+        resultat = /*recupérer le resultat en stream */ null;
+
+        // TODO
 
         Assert.assertEquals(personnesExpected, resultat);
     }
@@ -47,8 +46,10 @@ public class Exercice1 {
     @Test
     public void test2() {
         List<Personne> personnesExpected = Arrays.asList(personne2, personne3);
-        List<Personne> resultat = personnesExpected.stream().filter(Objects::nonNull)
-                        .filter(personne -> personne.getFormations().size() > 1).collect(Collectors.toList());
+
+        List<Personne> resultat = /*recupérer le resultat en stream */ null;
+
+        // TODO
 
         Assert.assertEquals(personnesExpected, resultat);
     }
@@ -60,8 +61,9 @@ public class Exercice1 {
     public void test3() {
         List<Personne> personnesExpected = Arrays.asList(personne1, personne2);
 
-        List<Personne> resultat = personneList.stream().filter(Objects::nonNull).filter(
-            personne -> personne.getExperiences().stream().anyMatch(exp -> exp.getSociete().equals("CNIEG"))).collect(Collectors.toList());
+        List<Personne> resultat = /* stream pour récupérer les résultats*/ null;
+
+        // TODO
 
         Assert.assertEquals(personnesExpected, resultat);
     }
@@ -77,10 +79,9 @@ public class Exercice1 {
         resultatExpected.add(Formation.builder().libelle("DOT NET").build());
         resultatExpected.add(Formation.builder().libelle("SQL").build());
 
-        List<Formation> formations = personneList.stream().filter(Objects::nonNull).filter(
-            personne -> personne.getExperiences().stream().anyMatch(exp -> exp.getSociete().equals("GOOGLE"))).flatMap(
-            personne -> personne.getFormations().stream()).collect(Collectors.toList());
+        List<Formation> formations = null  /* stream pour récupérer les résultats*/;
 
+        // TODO
 
         Assert.assertEquals(resultatExpected, formations);
     }
@@ -89,9 +90,6 @@ public class Exercice1 {
 
     private void initialiserListeDePersonne() {
         personneList = new ArrayList<>();
-
-
-
         personne1 = Personne.builder()//
             .dateNaissance(LocalDate.now())//
             .experience(Experience.builder()//
